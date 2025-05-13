@@ -28,8 +28,9 @@ for i in $(seq 32 126); do
     char=$(printf "\\$(printf '%03o' $i)")
 
     figlet -f $banner_font "$char" >> "$output_file"
+    if (( i != 126 )); then
     echo "" >> "$output_file"
-    
+    fi
     echo "Processed character: $char"
 done
 
